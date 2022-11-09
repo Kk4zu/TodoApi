@@ -10,7 +10,7 @@ using TodoApi.Models;
 
 namespace TodoApi.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/TodoItems")]
     [ApiController]
     public class todoitems : ControllerBase
     {
@@ -40,7 +40,7 @@ namespace TodoApi.Controllers
           {
               return NotFound();
           }
-            var todoItem = await _context.TodoItems.FindAsync(id);
+            var todoItem = await _context.TodoItems.FindAsync((long)1);
 
             if (todoItem == null)
             {
